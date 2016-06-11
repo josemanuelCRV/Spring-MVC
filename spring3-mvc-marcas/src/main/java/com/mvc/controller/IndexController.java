@@ -14,6 +14,8 @@ import com.mvc.services.UserInputServices;
 public class IndexController {
 
 	UserInputServices inputServices;
+	
+	UserOutputDto userOutputDto;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
@@ -34,7 +36,7 @@ public class IndexController {
 	@RequestMapping(value = "carform", method = RequestMethod.POST)
 	public @ResponseBody UserOutputDto carform(UserInputDto userInDTO) {
 		System.out.println(userInDTO.toString());
-		UserOutputDto userOutputDto = inputServices.getCarListByMarca(userInDTO);
+	 	UserOutputDto userOutputDto = inputServices.getCarListByMarca(userInDTO);
 		return userOutputDto;
 	}
 
