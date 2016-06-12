@@ -16,7 +16,7 @@ import com.mvc.services.UserInputServices;
 @Controller
 public class HelloController {
 
-	
+	@Autowired
 	UserInputServices inputServices;
 	
 	
