@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Spring 3 MVC Marcas</title>
+<title>Spring 3 MVC Simple</title>
 <spring:url value="/resources/core/css/hello.css" var="coreCss" />
 <spring:url value="/resources/core/css/bootstrap.min.css"
 	var="bootstrapCss" />
@@ -18,7 +18,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Spring 3 MVC - Marcas</a>
+				<a class="navbar-brand" href="#">Spring 3 MVC - Buscador Marcas</a>
 			</div>
 		</div>
 	</nav>
@@ -28,30 +28,30 @@
 			<h1>${title}</h1>
 
 
-
 			<div>
+   				
+				<form method="POST" action="CarForm">
+		            Marca:<br> <br><input type="text" name="marca"/><br>
+		            
+		          <hr>     
+		            <input type="submit" value="Enviar">
+		            
+		            
+		        </form>  
+				
 
-				<form method="GET" action="carform">
-					Marca de Vehículo:<br> <input type="text" name="marca" /><br>
-					<input type="submit" value="Enviar">
-
-
-				</form>
-
-
-
+				
 			</div>
 
-		</div>
-	</div>
 
-	<spring:url value="/resources/core/css/hello.js" var="coreJs" />
-	<spring:url value="/resources/core/css/bootstrap.min.js"
-		var="bootstrapJs" />
 
-	<script src="${coreJs}"></script>
-	<script src="${bootstrapJs}"></script>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+			<spring:url value="/resources/core/css/hello.js" var="coreJs" />
+			<spring:url value="/resources/core/css/bootstrap.min.js"
+				var="bootstrapJs" />
+
+			<script src="${coreJs}"></script>
+			<script src="${bootstrapJs}"></script>
+			<script
+				src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </body>
 </html>

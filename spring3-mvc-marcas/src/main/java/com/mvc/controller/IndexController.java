@@ -1,11 +1,11 @@
 package com.mvc.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.mvc.dto.UserInputDto;
 import com.mvc.dto.UserOutputDto;
 import com.mvc.services.UserInputServices;
@@ -13,6 +13,7 @@ import com.mvc.services.UserInputServices;
 @Controller
 public class IndexController {
 
+	@Autowired
 	UserInputServices inputServices;
 	
 	UserOutputDto userOutputDto;
@@ -36,7 +37,9 @@ public class IndexController {
 	@RequestMapping(value = "carform", method = RequestMethod.POST)
 	public @ResponseBody UserOutputDto carform(UserInputDto userInDTO) {
 		System.out.println(userInDTO.toString());
-	 	UserOutputDto userOutputDto = inputServices.getCarListByMarca(userInDTO);
+	 	
+		
+		UserOutputDto userOutputDto = inputServices.getCarListByMarca(userInDTO);
 		return userOutputDto;
 	}
 
