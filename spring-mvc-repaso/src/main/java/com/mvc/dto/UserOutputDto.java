@@ -44,6 +44,12 @@ public void setCp(int cp) {
 }
 
 
+@Override
+public String toString() {
+	return "UserOutputDto [email=" + email + ", cp=" + cp + "]";
+}
+
+
 
 	
 	

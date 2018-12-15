@@ -15,10 +15,11 @@ public class UserInputServices {
 	@Autowired
 	UserInputsRepository userInputsRepository;
 
-    
 	public UserOutputDto getUserDataByCountry(UserInputDto mUserInputDto) {
 
-		if ("Francia".equals(mUserInputDto.getCountry())) {
+		String country = "Francia";
+
+		if (country.equalsIgnoreCase(mUserInputDto.getCountry())) {
 			System.out.println("el usuario ha dicho por su InputDto que es frances");
 
 			// userInputsRepository.CargarVO1(getVoUserInputFromDTO(mUserInputDto));
@@ -58,7 +59,7 @@ public class UserInputServices {
 	// metodo de mapeo de salida
 	private UserOutputDto getDTOUserOutputFromVO(VoUserOutput voUserOutput) {
 
-		// mapeo del objeto de entrada hacia el Repository
+		// mapeo del objeto de salida del repository hacia la vista
 
 		UserOutputDto userOutputDTOSalidaVista = new UserOutputDto();
 
